@@ -22,11 +22,13 @@
     // element.textContent = 'Hello World' // 💰 in React, you set this with the "children" prop
     // element.className = 'container' // 💰 in React, this is also called the "className" prop
     // This is similar to ReactDOM.createRoot().render()
-    const elementProps = {id: 'text', children: 'Hello world!', className: 'container'};
-    const elementType = 'h1';
+    const stringhello = React.createElement('span', {children: 'Hello'});
+    const stringworld = React.createElement('span', {children: 'World'});
+    const elementProps = {element:[stringhello, stringworld], className: 'container'}
+    const elementType = 'span';
     const reactElement = React.createElement(elementType, elementProps);
     const root = ReactDOM.createRoot(rootElement)
-    rootElement.append(reactElement.props.children)
+    root.render(reactElement.props.element)
 
     // 🐨 Please re-implement the regular document.createElement code above
     // with these React API calls
