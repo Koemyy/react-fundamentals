@@ -6,6 +6,7 @@
 <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
 <script type="text/babel">
     // 🐨 Make a function called `message` which returns the JSX we want to share
 
@@ -20,21 +21,10 @@
         )
     }
 
-    const PropTypes = {
-        number(props, propName, componentName) {
-            if (typeof props[propName] !== 'string') {
-                //If you want to se a error message in the console, please change the value
-                //to 'number' :)
-                return new Error('Please use only string type!')
-            }
-        },
-    }
-
     Message.propTypes = {
-        greeting: PropTypes.number,
-        subject: PropTypes.number,
+        greeting: PropTypes.number.isRequired,
+        subject: PropTypes.number.isRequired,
     }
-
 
     const element = (
         <div className="container">
