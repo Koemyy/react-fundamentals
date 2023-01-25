@@ -27,8 +27,11 @@
     // 📜 You can learn the differences between JSX and HTML syntax from the React docs here:
     // https://reactjs.org/docs/dom-elements.html#differences-in-attributes
 
+    const containerClass = 'container';
+    const helloWorldElement = 'Hello World!'
+
     function createElement() {
-      return <div className="container" children="Hello World!"></div>
+      return <div className={containerClass} children={helloWorldElement}></div>
     }
     ReactDOM.createRoot(document.getElementById('root')).render(createElement())
   </script>
