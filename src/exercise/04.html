@@ -14,10 +14,12 @@
     function message ({children}) {
       return children
     }
+    const helloWorld = React.createElement(message, {children: 'Hello World'})
+    const goodbyeWorld = React.createElement(message, {children: 'Goodbye World'})
     const element = (
       <div className="container">
-        <div>{message({children: 'Hello World'})}</div>
-        <div>{message({children: 'Goodbye World'})}</div>
+        <div>{helloWorld}</div>
+        <div>{goodbyeWorld}</div>
       </div>
     )
 
