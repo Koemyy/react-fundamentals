@@ -29,9 +29,9 @@
 
     const containerClass = 'container';
     const helloWorldElement = 'Hello World!'
-
+    const props = {containerClass, helloWorldElement}
     function createElement() {
-      return <div className={containerClass} children={helloWorldElement}></div>
+      return <div className={props.containerClass} children={props.helloWorldElement}></div>
     }
     ReactDOM.createRoot(document.getElementById('root')).render(createElement())
   </script>
