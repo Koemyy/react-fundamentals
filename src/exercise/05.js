@@ -18,14 +18,23 @@ const smallBox = <div className="box box--small">small lightblue box</div>
 const mediumBox = <div className="box box--medium">medium pink box</div>
 const largeBox = <div className="box box--large">large orange box</div>
 
+function Box({css1, css2}) {
+    return (
+        <div style={{fontStyle: css2}} className={css1}>
+            small lightblue box
+        </div>
+    )
+}
+
 function App() {
-  return (
-    <div>
-      {smallBox}
-      {mediumBox}
-      {largeBox}
-    </div>
-  )
+    return (
+        <div>
+            <Box css1='box' css2='italic'/>
+            {smallBox}
+            {mediumBox}
+            {largeBox}
+        </div>
+    )
 }
 
 export default App
