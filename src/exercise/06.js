@@ -2,11 +2,12 @@
 // http://localhost:3000/isolated/exercise/06.js
 
 import * as React from 'react'
+import {useRef} from 'react';
 
 function UsernameForm({onSubmitUsername}) {
-    function handleSubmit(event) {
-        event.preventDefault()
-        onSubmitUsername = event.target.elements.labelId.value
+    const refContainer = useRef(null);
+    function handleSubmit() {
+        onSubmitUsername = refContainer.current;
         alert(onSubmitUsername)
     }
   // 🐨 add a submit event handler here (`handleSubmit`).
